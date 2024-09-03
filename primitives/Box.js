@@ -11,9 +11,13 @@ export class Box extends Entity{
         this.draw()
     }
     draw(){
+        this.c.save()
+        this.c.translate(this.position.x, this.position.y)
+        this.c.rotate(this.angle)
         this.c.fillStyle = this.color
-        this.c.fillRect(this.position.x, this.position.y, this.size.x, this.size.y)
-       
+        this.c.fillRect(0, 0, this.size.x, this.size.y)
+
+        this.c.restore()
     }
     update(){
         

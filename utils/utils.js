@@ -1,7 +1,11 @@
+import { Origin } from "./Origin.js"
+
+
 export class Vector2d {
     constructor(x, y) {
-        this.x = x
-        this.y = y
+        this.origin = new Origin()
+        this.x = x + this.origin.x
+        this.y = y + this.origin.y
 
         return (x + y)
     }
@@ -12,6 +16,12 @@ export class Vector2d {
     set(x,y){
         this.x = x
         this.y = y
+    }
+    reflect(){
+        return new Vector2d(this.x, this.y)
+    }
+    add(a,b){
+        return new Vector2d(this.x + a , this.y+b)
     }
 }
 

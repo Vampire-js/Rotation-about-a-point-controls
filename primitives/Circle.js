@@ -7,22 +7,19 @@ export class Circle extends Entity{
         super(position)
         this.rad = rad
         this.c = c
-        this.color = "black"
+        this.color = "red"
         this.draw()
     }
     draw(){
-        // this.c.fillStyle = this.color
-        this.c.beginPath()
-        this.c.arc(this.position.x, this.position.y,this.rad,0,Math.PI*2 )
-        this.fillStyle = this.color
-        this.c.stroke()
+        
+        c.beginPath()
+        c.arc(this.position.x, this.position.y,this.rad,0,Math.PI*2 )
+        c.strokestyle = this.color
+        c.stroke()
        
     }
     update(){
-        
         this.applyPhysics()
-   
         this.draw()
-  
     }
 }
