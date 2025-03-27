@@ -7,7 +7,6 @@ export class Vector2d {
         this.x = x + this.origin.x
         this.y = y + this.origin.y
 
-        return (x + y)
     }
     copy(v) {
         this.x = v.x

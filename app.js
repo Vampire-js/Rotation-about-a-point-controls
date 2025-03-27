@@ -3,6 +3,7 @@ import { Scatter } from "../js/Scatter.js"
 import { KineticPlayer } from "./primitives/KineticPlayer.js"
 import { Vector2d } from "./utils/utils.js"
 
+
 const canvas = document.getElementById("canvas")
 canvas.height = innerHeight
 canvas.width = innerWidth
@@ -50,6 +51,13 @@ entities.push(Pickable)
 entities.push(GrassScatter)
 entities.push(GroundScatter)
 
+
+
+const enemy = new KineticPlayer()
+enemy.src = "../assets/Enemy.svg"
+enemy.size.set(190*1.2,210*1.2)
+
+
 const controller = new TopdownController(player, entities)
 
 
@@ -79,6 +87,7 @@ const animate = () => {
 
     controller.update()
     player.update()
+    enemy.update()
 
     // bullet.update()
 
